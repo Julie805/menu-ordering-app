@@ -1,10 +1,67 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-} 
-
-header {
-    background-image: 
+html {
+    background-color: rgb(232, 237, 238);
 }
 
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Smythe', cursive;
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 600px;
+    background-color: white;
+  
+} 
+
+.container-wrapper {
+    margin: 0;
+    padding: 45px;
+}
+
+header {
+    background-image: url("./img/ferks-guare-KEZdWfYD-ow-unsplash\ 1.png");
+    background-color: black;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    background-position: abosolute;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;  
+}
+
+.emoji  {
+    font-size: 80px;
+    margin: 0;   
+}
+
+h1 {
+    color: white;
+    font-size: 40px;
+    margin: 0;
+}
+
+h2 {
+    color: white;
+    font-size: 22px;
+    margin-top: 10px; 
+}
+
+h3 {
+    font-size: 28px;
+}
+
+
+.plus {
+    font-size: 30px;
+    padding-left: 20px;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+}
