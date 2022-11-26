@@ -11,6 +11,14 @@ document.addEventListener('click',function(event){
 //where I left off...
 function handleAddClick(itemId){
   let order = ''
+
+  <div>
+    <h3>Your order</h3>
+    <h3>Total price:</h3>
+    <button>Complete order</button>
+
+  </div>
+
   console.log(itemId, "hello")
 }
 
