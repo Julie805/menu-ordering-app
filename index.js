@@ -8,19 +8,21 @@ document.addEventListener('click',function(event){
   }
 })
 
-//where I left off...
+//where I left off. This function should add the items clicked to an object array, and then render the values in that array. Problem: the console log works, but nothing is being added to the array. Also renderOrder() seems to cause errors?//
 function handleAddClick(itemId){
-  let order = ''
-
-  <div>
-    <h3>Your order</h3>
-    <h3>Total price:</h3>
-    <button>Complete order</button>
-
-  </div>
-
-  console.log(itemId, "hello")
+  let order = document.getElementById('order')
+  let orderArray = [{test: "test"}]
+  if (menuArray.id === itemId) {
+    orderArray.unshift({
+      name: "name",
+      price: "$price"
+    }) 
+  }
+  console.log(orderArray, itemId)
+  //renderOrder()
 }
+
+
 
 function getHtml() {
   let html = ''
@@ -40,7 +42,12 @@ function getHtml() {
   return html
 }
 
-function render() {
-  document.getElementById('feed').innerHTML = getHtml()
+function renderMenu() {
+  document.getElementById('menu').innerHTML = getHtml()
 }
-render()
+renderMenu()
+
+//function renderOrder() {
+//  document.getElementById('order').innerHtmL = handleAddClick()
+//}
+
