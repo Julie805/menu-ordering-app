@@ -1,30 +1,36 @@
 
 import { menuArray } from './data.js'
 
-//grabs the id of the clicked add button and passes it to the handleAddClick function
+//shows the order section of the app and gets control of the id of the clicked add button, passing the id to the handleAddClick function
 document.addEventListener('click',function(event){
-  document.classList.remove("hide-order")
+  const orderDiv = document.getElementById("order-div")
+  orderDiv.classList.remove("hide-order")
   if(event.target.dataset.add) {
     handleAddClick(event.target.dataset.add)
   }
 })
 
-//where I left off. This function should add the items clicked to an object array, and then render the values in that array. Problem: the console log works, but nothing is being added to the array. Also renderOrder() seems to cause errors?//
+const order =[]
+//filters the menuArray data to take control of the correct menu object, then pushes the target object into the order array
 function handleAddClick(itemId){
-  //let order = document.getElementById('order')
-  //const targetMenuObj = menuArray.filter(function(menuItem){
-      //return menuItem.id === itemId
-     // if (menuItem.name === itemId) {
-        //order.document.addHTML = <p>Booya</p>
-      //}
-  //console.log(targetMenuObj)
+  const targetMenuObj = menuArray.filter(function(menuItem){
+        return menuItem.id == itemId    
+  })
+  order.push(targetMenuObj)
+  //console.log(order)
 }
+
+
+
+
+
+
    
   
   
     
  
-  //renderOrder()
+  
 
 
 
@@ -52,7 +58,13 @@ function renderMenu() {
 }
 renderMenu()
 
-//function renderOrder() {
-//  document.getElementById('order').innerHtmL = handleAddClick()
-//}
+function renderOrder() {
+  document.getElementById('order').innerHtmL = `
+    <p>${order.name}</p>
+    <p>$${order.price}</p>
+    `
 
+}
+
+renderOrder()
+  
