@@ -25,7 +25,7 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     height: 200px;
-    background-position: abosolute;
+    background-position: absolute;
 }
 
 .menu-item {
@@ -68,7 +68,7 @@ p {
 
 
 button  {
-    width: 100%;
+    width:99%;
     background-color: #16DB99;
     border: none;
     padding: 25px 0;
@@ -86,6 +86,29 @@ button  {
     justify-content: center;
 }
 
-.hide-order {
-    display: none;
+.order {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
 }
+
+.price { 
+    color: red;
+}
+
+.remove-btn {
+    padding-left: 20px;
+    color: #BBBBBB;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.order-line {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
