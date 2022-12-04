@@ -9,6 +9,8 @@ const orderArray =[]
 document.addEventListener('click',function(event){
   if(event.target.dataset.add) {
     addMenuItem(event.target.dataset.add)
+  } else if (event.target.dataset.index) {
+    removeMenuItem(event.target.dataset.index)
   }
 })
 
@@ -39,7 +41,7 @@ function getOrderHtml() {
     orderHtml += `
       <div class="order">
         <h3>${item.name}<span class="remove-btn" data-index=${index}>remove</span></h3
-        <h3 class="price">$${item.price}</h3>
+        <h3>$${item.price}</h3>
       </div>`
       totalPrice += item.price
   })
@@ -63,6 +65,13 @@ function addMenuItem(itemId){
   orderArray.push(menuArray.filter(function(menuItem){
     return menuItem.id == itemId 
   })[0])
+  renderOrder()
+}
+
+function removeMenuItem(itemIndex){
+  orderArray.pop(menuArray.filter(function(itemIndex){
+    return itemIndex.id === itemIndex
+  }))
   renderOrder()
 }
 
