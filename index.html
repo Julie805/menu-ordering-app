@@ -15,25 +15,41 @@
                 <h2>The finest vegan grub in town.</h2>  
             </div>          
         </header>
-        <div class="container-wrapper">
-            <div class="pop-up hidden">
-                <h4 class="center">Enter card details</h4>
-                <form>
-                    <input type="text" id="name" name="fullName" placeholder="Enter your name">
-                    <input type="text" id="card" name="cardNumber" placeholder="Enter card number">
-                    <input type="text" id="cvv" name="cvv" placeholder="Enter CVV">
-                    <button type="submit">Pay</button>
-                </form>
-
+        <main>
+            <div class="container-wrapper">  
+                    <div class="payment-form" id="payment-form" >
+                        <h4 class="center">Enter card details</h4>
+                        <form id="form">
+                            <input
+                                type="text"
+                                name="full-name"
+                                placeholder="Enter your name"
+                                aria-label="Full name"
+                                required>
+                            <input
+                                type="text"
+                                name="card-number"
+                                placeholder="Enter card number"
+                                aria-label="Card number"
+                                required>
+                            <input
+                                type="text"
+                                name="cvv"
+                                placeholder="Enter CVV"
+                                aria-label="CVV"
+                                required>
+                            <button type="submit" id="pay-btn">Pay</button>
+                        </form>
+                    </div>
+                <div id="menu-container">
+                    <!-- menu goes here -->
+                </div>
+                <div id="order-container">
+                        <!-- order goes here --> 
+                </div>
+                <script src="index.js" type="module"></script>
             </div>
-            <div class="menu" id="menu">
-                <!-- menu goes here -->
-            </div>
-            <div id="order-container">
-                    <!-- order goes here --> 
-            </div>
-            <script src="index.js" type="module"></script>
-        </div>
+        </main>
     </body>
 </html>
 

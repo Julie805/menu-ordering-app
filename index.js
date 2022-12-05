@@ -2,8 +2,9 @@
 import { menuArray } from './data.js'
 //https://scrimba.com/scrim/cpJBkpUd
 
-//holds the clicked items (aka the order) - works.
+//holds the clicked items of the order
 const orderArray =[]
+const form = document.querySelector('#form')
 
 //shows the order section of the app and gets control of the id of the clicked add button, passing the id to the addMenuItem function
 document.addEventListener('click',function(event){
@@ -11,8 +12,30 @@ document.addEventListener('click',function(event){
     addMenuItem(event.target.dataset.add)
   } else if (event.target.dataset.index) {
     removeMenuItem(event.target.dataset.index)
-  }
+  } else if (event.target.id = 'orderBtn')
+    openPaymentModal()
 })
+
+//needs to be separate due to being a submit and not a click event. Prevent default cancels submitting the info
+document.querySelector('#pay-btn').addEventListener('submit', function(event){
+  event.preventDefault()
+  confirmOrder()
+  
+})
+
+//turns the form data into an object where the value of name can be used
+function confirmOrder() {
+  const formData = new FormData(form)
+  const name = formData.get('full-name')
+  document.querySelector('#payment-form').style.display = 'none'
+  document.querySelector('#order-container').innerHTML = 
+  `<p>Thanks ${name}, your order is on its way!</p>`
+  //orderArray.length = 0
+}
+
+function openPaymentModal(){
+  document.querySelector('#payment-form').style.display = 'block'
+}
 
 function getMenuHtml() {
   let menuHtml = ''
@@ -35,7 +58,7 @@ function getMenuHtml() {
 //Maps over the order array while rendering HTML based on what's in the array
 function getOrderHtml() {
   let totalPrice = 0
-  let orderHtml = `<h3 class="center">Your order</h3>`
+  let orderHtml = `<h3 class="display-order">Your order</h3>`
   //adds items from the orderArray
   orderArray.forEach(function(item, index) {
     orderHtml += `
@@ -53,8 +76,9 @@ function getOrderHtml() {
       <h3>$${totalPrice}</h3>
       </div>
     </div>
-    <button>Complete order</button>
-    `  
+    <button id="order-btn">Complete order</button>
+    ` 
+     
   return orderHtml  
    
 }
@@ -80,7 +104,7 @@ function renderOrder() {
 }
 
 function renderMenu() {
-  document.getElementById('menu').innerHTML = getMenuHtml()
+  document.getElementById('menu-container').innerHTML = getMenuHtml()
 }
 renderMenu()
 

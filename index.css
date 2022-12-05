@@ -90,6 +90,11 @@ button  {
     justify-content: center;
 }
 
+#display-order {
+    display: flex;
+    justify-content: center;
+}
+
 .order {
     display: flex;
     justify-content:space-between;
@@ -112,7 +117,7 @@ button  {
     justify-content: space-between;
 }
 
-.pop-up {
+.payment-form {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -127,6 +132,7 @@ button  {
     padding: 25px;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
+    display: none;
 }
 
 h4 {
@@ -140,7 +146,9 @@ input {
     padding: 25px 15px;
     margin-bottom: 20px;  
     font-family: 'Roboto', sans-serif; 
+    font-size: 20px;
 }
+
 
 
 
