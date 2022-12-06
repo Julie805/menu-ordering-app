@@ -149,6 +149,15 @@ input {
     font-size: 20px;
 }
 
+.confirmation {
+    color: #065F46;
+    margin: 50px auto;
+    text-align: center;
+    background-color: #ECFDF5;
+    width: 86%;
+    padding: 35px;
+}
+
 
 
 

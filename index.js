@@ -6,7 +6,7 @@ import { menuArray } from './data.js'
 const orderArray =[]
 const form = document.querySelector('#form')
 
-//shows the order section of the app and gets control of the id of the clicked add button, passing the id to the addMenuItem function
+//controls all the click events on the app
 document.addEventListener('click',function(event){
   if(event.target.dataset.add) {
     addMenuItem(event.target.dataset.add)
@@ -16,11 +16,10 @@ document.addEventListener('click',function(event){
     openPaymentModal()
 })
 
-//needs to be separate due to being a submit and not a click event. Prevent default cancels submitting the info
-document.querySelector('#pay-btn').addEventListener('submit', function(event){
+//Controls the submit event of payment info. Prevent default cancels submitting the info and rendering in the browser string
+form.addEventListener('submit', function(event){
   event.preventDefault()
-  confirmOrder()
-  
+  confirmOrder()  
 })
 
 //turns the form data into an object where the value of name can be used
@@ -29,8 +28,8 @@ function confirmOrder() {
   const name = formData.get('full-name')
   document.querySelector('#payment-form').style.display = 'none'
   document.querySelector('#order-container').innerHTML = 
-  `<p>Thanks ${name}, your order is on its way!</p>`
-  //orderArray.length = 0
+  `<h3 class="confirmation">Thanks ${name}!Your order is on its way!</h3>`
+  orderArray.length = 0
 }
 
 function openPaymentModal(){
