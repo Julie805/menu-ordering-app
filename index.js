@@ -1,6 +1,5 @@
 
 import { menuArray } from './data.js'
-//https://scrimba.com/scrim/cpJBkpUd
 
 //holds the clicked items of the order
 const orderArray =[]
@@ -21,20 +20,6 @@ form.addEventListener('submit', function(event){
   event.preventDefault()
   confirmOrder()  
 })
-
-//turns the form data into an object where the value of name can be used
-function confirmOrder() {
-  const formData = new FormData(form)
-  const name = formData.get('full-name')
-  document.querySelector('#payment-form').style.display = 'none'
-  document.querySelector('#order-container').innerHTML = 
-  `<h3 class="confirmation">Thanks ${name}!Your order is on its way!</h3>`
-  orderArray.length = 0
-}
-
-function openPaymentModal(){
-  document.querySelector('#payment-form').style.display = 'block'
-}
 
 function getMenuHtml() {
   let menuHtml = ''
@@ -82,7 +67,6 @@ function getOrderHtml() {
    
 }
 
-
 //filters the menuArray data to take control of the correct menu object, then pushes the target object into the order array
 function addMenuItem(itemId){
   orderArray.push(menuArray.filter(function(menuItem){
@@ -96,6 +80,20 @@ function removeMenuItem(itemIndex){
     return itemIndex.id === itemIndex
   }))
   renderOrder()
+}
+
+//turns the form data into an object where the value of name can be used
+function confirmOrder() {
+  const formData = new FormData(form)
+  const name = formData.get('full-name')
+  document.querySelector('#payment-form').style.display = 'none'
+  document.querySelector('#order-container').innerHTML = 
+  `<h3 class="confirmation">Thanks ${name}!Your order is on its way!</h3>`
+  orderArray.length = 0
+}
+
+function openPaymentModal(){
+  document.querySelector('#payment-form').style.display = 'block'
 }
 
 function renderOrder() {
