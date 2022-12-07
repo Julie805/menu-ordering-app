@@ -88,7 +88,7 @@ function confirmOrder() {
   const name = formData.get('full-name')
   document.querySelector('#payment-form').style.display = 'none'
   document.querySelector('#order-container').innerHTML = 
-  `<h3 class="confirmation">Thanks ${name}!Your order is on its way!</h3>`
+  `<h3 class="confirmation">Thanks ${name}! Your order is on its way!</h3>`
   orderArray.length = 0
 }
 

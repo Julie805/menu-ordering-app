@@ -1,23 +1,23 @@
 export const menuArray = [
     {
-        name: "Garden Pizza",
-        ingredients: ["peppers", " mushroom", " cashew mozarella"],
-        id: 0,
-        price: 14,
-        emoji: "🍕"
+        name: "Almond Croissant",
+        ingredients: ["Wheat flour", " butter", " local almonds"],
+        price: 6,
+        emoji: "🥐",
+        id: 0
     },
     {
-        name: "Veggie Burger",
-        ingredients: ["Impossible burger", " vegan cheese", " lettuce"],
-        price: 12,
-        emoji: "🍔",
+        name: "Oliver's Apple Cake",
+        ingredients: ["Spelt flour", " pink lady apples", " spices"],
+        price: 8,
+        emoji: "🥮",
         id: 1
     },
         {
-        name: "Kombucha Beer",
-        ingredients: ["kombucha tea", " passion fruit", " lemon"],
-        price: 12,
-        emoji: "🍺",
+        name: "Oatmilk Latte",
+        ingredients: ["Organic coffee", " housemade oatmilk"],
+        price: 8,
+        emoji: "☕️",
         id: 2
     }
 ]
