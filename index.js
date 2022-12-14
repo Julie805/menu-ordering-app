@@ -4,6 +4,7 @@ import { menuArray } from './data.js'
 //holds the clicked items of the order
 const orderArray =[]
 const form = document.querySelector('#form')
+const closeForm = document.querySelector('#close-form')
 
 //controls all the click events on the app
 document.addEventListener('click',function(event){
@@ -11,8 +12,13 @@ document.addEventListener('click',function(event){
     addMenuItem(event.target.dataset.add)
   } else if (event.target.dataset.index) {
     removeMenuItem(event.target.dataset.index)
-  } else if (event.target.id = 'orderBtn')
-    openPaymentModal()
+  } else if (event.target.id === 'orderBtn') {
+    openPaymentModal() 
+  } else if (event.target === closeForm) {
+    closePaymentModal()
+  }
+   
+    
 })
 
 //Controls the submit event of payment info. Prevent default cancels submitting the info and rendering in the browser string
@@ -20,6 +26,7 @@ form.addEventListener('submit', function(event){
   event.preventDefault()
   confirmOrder()  
 })
+
 
 function getMenuHtml() {
   let menuHtml = ''
@@ -94,6 +101,11 @@ function confirmOrder() {
 
 function openPaymentModal(){
   document.querySelector('#payment-form').style.display = 'block'
+}
+
+function closePaymentModal () {
+  document.querySelector('#payment-form').style.display = 'none' 
+  console.log('ran')
 }
 
 function renderOrder() {

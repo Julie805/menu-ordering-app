@@ -1,8 +1,13 @@
-<html>
+
+<!DOCTYPE html>
+<html lang="en-US">
+
     <head>
         <meta charset="UTF-8">
+        <title>Oliver's Cafe</title>
+        <meta name="Oliver's menu ordering app" content="">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <!-- Google fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Alice&display=swap" rel="stylesheet">
         <!-- Font Awesome CDN -->
@@ -10,7 +15,10 @@
         <!-- CSS -->
        <link rel="stylesheet" href="index.css">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+       <!-- Javascript -->
+       <script src="index.js" type="module"></script>
     </head>
+
     <body>
         <header>
             <div class="container-wrapper">
@@ -20,7 +28,8 @@
         </header>
         <main>
             <div class="container-wrapper">  
-                    <div class="payment-form" id="payment-form" >
+                    <div class="payment-form" id="payment-form">
+                        <p id="close-form">X</p>
                         <h4 class="center">Enter card details</h4>
                         <form id="form">
                             <input
@@ -50,7 +59,6 @@
                 <div id="order-container">
                         <!-- order goes here --> 
                 </div>
-                <script src="index.js" type="module"></script>
             </div>
         </main>
     </body>

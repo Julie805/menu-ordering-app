@@ -16,7 +16,7 @@ export const menuArray = [
         {
         name: "Oatmilk Latte",
         ingredients: ["Organic coffee", " housemade oatmilk"],
-        price: 8,
+        price: 5,
         emoji: "☕️",
         id: 2
     }
