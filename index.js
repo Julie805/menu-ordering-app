@@ -12,8 +12,9 @@ document.addEventListener('click',function(event){
     addMenuItem(event.target.dataset.add)
   } else if (event.target.dataset.index) {
     removeMenuItem(event.target.dataset.index)
-  } else if (event.target.id === 'orderBtn') {
+  } else if (event.target.id === 'order-btn') {
     openPaymentModal() 
+    console.log('ran')
   } else if (event.target === closeForm) {
     closePaymentModal()
   }
@@ -105,7 +106,6 @@ function openPaymentModal(){
 
 function closePaymentModal () {
   document.querySelector('#payment-form').style.display = 'none' 
-  console.log('ran')
 }
 
 function renderOrder() {
